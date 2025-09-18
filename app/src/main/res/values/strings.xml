@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Installed Apps</string>
+    <string name="version">Version</string>
+    <string name="app_package">App package</string>
+    <string name="checksum">Checksum SHA-1</string>
+    <string name="open">Open</string>
+    <string name="gathering_app_list">Gathering app list...</string>
+</resources>
