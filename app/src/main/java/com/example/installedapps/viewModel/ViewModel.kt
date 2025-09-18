@@ -21,17 +21,17 @@ import java.security.MessageDigest
 class ViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private val progressMutableChannel = MutableSharedFlow<Boolean>()
-
     val progressChannel: SharedFlow<Boolean> = progressMutableChannel
-    private val appListMutableChannel = MutableStateFlow<List<AppInfo>>(mutableListOf())
 
+    private val appListMutableChannel = MutableStateFlow<List<AppInfo>>(mutableListOf())
     val appListChannel: StateFlow<List<AppInfo>> = appListMutableChannel
-    private var getAppsListJob: Job? = null
 
     private val appInfoMutableChannel = MutableStateFlow<AppInfo?>(null)
     val appInfoChannel: StateFlow<AppInfo?> = appInfoMutableChannel
 
     private var appMap = mutableMapOf<String, AppInfo>()
+
+    private var getAppsListJob: Job? = null
 
     fun getAppList() {
         if (getAppsListJob?.isActive == true) return
@@ -101,7 +101,7 @@ class ViewModel(private val app: Application) : AndroidViewModel(app) {
 }
 
 
-fun getAppSHA1Fingerprint(packageManager: PackageManager, packageName: String): String {
+private fun getAppSHA1Fingerprint(packageManager: PackageManager, packageName: String): String {
     try {
 
         val packageInfo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
