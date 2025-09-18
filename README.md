@@ -8,6 +8,9 @@ A test app for retreiving a list of apps with folowing details:
 A MVVM pattern was used for simplicity and reliability
 Stack:
 Coroutines, SharedFlow, StateFlow, Compose, ViewModel
+
+
+
 ![App list](https://github.com/user-attachments/assets/4add098c-db0f-4937-b5e6-4068e12f7d53)
 
 
