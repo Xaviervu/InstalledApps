@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.pm.PackageManager
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -33,6 +31,7 @@ import com.example.installedapps.ui.navigation.FirstScreen
 import com.example.installedapps.ui.navigation.Screen
 import com.example.installedapps.ui.theme.InstalledAppsTheme
 import com.example.installedapps.viewModel.ViewModel
+import androidx.compose.ui.res.painterResource
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -60,7 +59,7 @@ fun SetAppContent(viewModel: ViewModel, packageManager: PackageManager, activity
                                     navController.navigateUp()
                                 }) {
                                     Icon(
-                                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                        painter = painterResource(id = R.drawable.arrow_back),
                                         contentDescription = "Navigate back"
                                     )
                                 }
